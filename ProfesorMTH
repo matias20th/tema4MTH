@@ -1,0 +1,36 @@
+package tema4;
+
+public class ProfesorMTH {
+    protected String dniProfesor;
+    protected String nombre;
+    protected String apellidos;
+    protected int edad;
+    protected float nomina;
+    protected Modulo modulo;
+
+    public ProfesorMTH(String dniProfesor, String nombre, String apellidos, int edad, Modulo modulo) {
+        this.dniProfesor = dniProfesor;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
+        this.modulo = modulo;
+    }
+
+    public String toString() {
+        return "Profesor: " + nombre + " " + apellidos + ", DNI: " + dniProfesor + ", Edad: " + edad + 
+               ", Módulo: " + modulo + ", Nómina: " + nomina;
+    }
+
+    public float importeNomina(float paramSueldoBase, float paraComplementos, float paraDeducciones) {
+        this.nomina = paramSueldoBase + paraComplementos - paraDeducciones;
+        return nomina;
+    }
+
+    @Override
+    public boolean equals(Object anObject) {
+        if (this == anObject) return true;
+        if (anObject == null || getClass() != anObject.getClass()) return false;
+        ProfesorMTH profesor = (ProfesorMTH) anObject;
+        return Float.compare(profesor.nomina, this.nomina) == 0;
+    }
+}
