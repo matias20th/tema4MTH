@@ -1,0 +1,21 @@
+package tema4;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class ProfesorInterinoMTH extends ProfesorMTH {
+    private Date fechaInicioInterinidad;
+
+    public ProfesorInterinoMTH(String dniProfesor, String nombre, String apellidos, int edad, Modulo modulo, Date fechaIni) {
+        super(dniProfesor, nombre, apellidos, edad, modulo);
+        this.fechaInicioInterinidad = fechaIni;
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return "ProfesorInterino [dniProfesor=" + dniProfesor + ", nombre=" + nombre + ", apellidos=" + apellidos +
+                ", edad=" + edad + ", módulo=" + modulo + ", nomina=" + nomina + "] [fechaInicioInterinidad=" +
+                sdf.format(fechaInicioInterinidad) + "]";
+    }
+}
+
