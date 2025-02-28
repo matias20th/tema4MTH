@@ -1,0 +1,22 @@
+package tema4;
+public class ProfesorTitularMTH extends ProfesorMTH {
+    private int añosAntiguedad;
+
+    public ProfesorTitularMTH(String dniProfesor, String nombre, String apellidos, int edad, Modulo modulo, int añosAntiguedad) {
+        super(dniProfesor, nombre, apellidos, edad, modulo);
+        this.añosAntiguedad = añosAntiguedad;
+    }
+
+    public float importeNomina(float paramSueldoBase, float paramComplementos) {
+        float deducciones = añosAntiguedad * 10;
+        this.nomina = paramSueldoBase + paramComplementos - deducciones;
+        return nomina;
+    }
+
+    @Override
+    public String toString() {
+        return "ProfesorTitular [añosAntiguedad=" + añosAntiguedad + ", toString()= [" +
+                "dniProfesor=" + dniProfesor + ", nombre=" + nombre + ", apellidos=" + apellidos +
+                ", edad=" + edad + ", módulo=" + modulo + ", nomina=" + nomina + "]]";
+    }
+}
