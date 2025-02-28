@@ -1,0 +1,30 @@
+package tema4;
+
+import java.util.Date;
+
+public class ProfesorTest {
+    public static void main(String[] args) {
+        Date fecha1 = new Date(123, 11, 1);
+        Date fecha2 = new Date(123, 11, 1);
+
+        ProfesorInterinoMTH interino1 = new ProfesorInterinoMTH("65426851-K", "James", "Rodriguez cuadrado", 45, Modulo.BBDD, fecha1);
+        ProfesorInterinoMTH interino2 = new ProfesorInterinoMTH("96485321-L", "Matias", "Heredia Messi", 87, Modulo.ENTORNOS, fecha2);
+
+        ProfesorTitularMTH titular1 = new ProfesorTitularMTH("95-K", "Pedro", "Do Santos Rabone", 32, Modulo.MARCAS, 5);
+        ProfesorTitularMTH titular2 = new ProfesorTitularMTH("46-L", "Neymar", "Di maria muñoz", 49, Modulo.PROGRAMACI, 10);
+
+        // Nominas
+        interino1.importeNomina(2000, 300, 100);
+        interino2.importeNomina(2200, 250, 100);
+
+        titular1.importeNomina(2500, 400);
+        titular2.importeNomina(2700, 350);
+
+        // Resultados
+        System.out.println("Listado claustro profesores********");
+        System.out.println(interino1);
+        System.out.println(interino2);
+        System.out.println(titular1);
+        System.out.println(titular2);
+    }
+}
